@@ -1,15 +1,16 @@
 Built with React Native for seamless user experiences, Animatable for captivating animations, and integrated with the dependable backend systems of Appwrite, this app showcases impressive design and functionality, enabling seamless sharing of AI videos within the community.
 
 
-Tech Stack
-React Native
-Expo
-Nativewind
-Animatable
-Appwrite
+## <a name="tech-stack">⚙️ Tech Stack</a>
 
+- React Native
+- Expo
+- Nativewind
+- Animatable
+- Appwrite
 
-🔋 Features
+## <a name="features">🔋 Features</a>
+
 👉 Onboarding Screen: Engaging graphics and clear instructions welcome users to the app.
 
 👉 Robust Authentication & Authorization System: Secure email login safeguards user accounts.
