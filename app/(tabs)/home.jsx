@@ -7,6 +7,7 @@ import {
   RefreshControlComponent,
   RefreshControl,
   Alert,
+  ActivityIndicator,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -18,11 +19,11 @@ import Trending from "../../components/Trending";
 import EmptyState from "../../components/EmptyState";
 import { getAllPosts, getLatestPosts } from "../../lib/appwrite";
 import useAppwrite from "../../lib/useAppwrite";
-import VideoCard from '../../components/VideoCard';
+import VideoCard from "../../components/VideoCard";
 
 const Home = () => {
   const [refreshing, setRefreshing] = useState(false);
-  const { data:posts, isLoading, refetch } = useAppwrite(getAllPosts);
+  const { data: posts, isLoading, refetch } = useAppwrite(getAllPosts);
   const { data: latestPosts } = useAppwrite(getLatestPosts);
 
   const onRefresh = async () => {
@@ -83,8 +84,11 @@ const Home = () => {
               <Text className="text-gray-100 text-lg font-pregular mb-3">
                 Latest Videos
               </Text>
-
-              <Trending posts={latestPosts ?? []} />
+              {isLoading ? (
+                <ActivityIndicator color="#fff" size="large" />
+              ) : (
+                <Trending posts={latestPosts ?? []} />
+              )}
             </View>
           </View>
         )}

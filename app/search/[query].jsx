@@ -1,5 +1,5 @@
-import { View, Text, FlatList, RefreshControl } from "react-native";
-import React, { useEffect, useState } from "react";
+import { View, Text, FlatList  } from "react-native";
+import React, { useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import SearchInput from "../../components/SearchInput";
@@ -13,14 +13,6 @@ import { useLocalSearchParams } from "expo-router";
 const Search = () => {
   const { query } = useLocalSearchParams();
   const { data: posts, refetch } = useAppwrite(() => searchPosts(query));
-  const [refreshing, setRefreshing] = useState(false);
-
-  const onRefresh = async () => {
-    setRefreshing(true);
-    // re call videos => if any new videos has been added
-    await refetch();
-    setRefreshing(false);
-  };
 
   useEffect(() => {
     refetch();
@@ -71,9 +63,6 @@ const Search = () => {
             subtitle="No videos found for this search query"
           />
         )}
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }
       />
       <StatusBar backgroundColor="#161622" style="light" />
     </SafeAreaView>

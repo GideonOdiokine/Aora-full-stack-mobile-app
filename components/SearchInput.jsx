@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   View,
-  Text,
   TextInput,
-  StyleSheet,
   TouchableOpacity,
   Image,
   Alert,
@@ -14,7 +12,6 @@ import { router, usePathname } from "expo-router";
 
 const SearchInput = ({ initialQuery }) => {
   const pathname = usePathname();
-
   const {
     control,
     handleSubmit,
@@ -57,7 +54,8 @@ const SearchInput = ({ initialQuery }) => {
                 );
               }
 
-              if (pathname.startsWith("/search")) router.setParams({ query: queryString });
+              if (pathname.startsWith("/search"))
+                router.setParams({ query: queryString });
               else router.push(`/search/${queryString}`);
             }}
           >
@@ -73,19 +71,5 @@ const SearchInput = ({ initialQuery }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "white",
-    width: "100%",
-
-    borderColor: "#e8e8e8",
-    borderWidth: 1,
-    borderRadius: 5,
-
-    paddingHorizontal: 10,
-    marginVertical: 5,
-  },
-  input: {},
-});
 
 export default SearchInput;
