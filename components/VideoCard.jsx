@@ -43,7 +43,7 @@ const VideoCard = ({ title, creator, avatar, thumbnail, video }) => {
       {play ? (
         <Video
           source={{
-            uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            uri: video,
           }}
           className="w-full h-60 rounded-xl mt-3"
           resizeMode={ResizeMode.CONTAIN}

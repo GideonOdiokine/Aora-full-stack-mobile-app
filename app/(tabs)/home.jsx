@@ -93,10 +93,14 @@ const Home = () => {
           </View>
         )}
         ListEmptyComponent={() => (
-          <EmptyState
-            title="No Videos Found"
-            subtitle="Be the first on to upload a video "
-          />
+          <>
+            {!isLoading && (
+              <EmptyState
+                title="No Videos Found"
+                subtitle="Be the first on to upload a video "
+              />
+            )}
+          </>
         )}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
