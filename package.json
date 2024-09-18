@@ -15,11 +15,13 @@
     "expo-constants": "~16.0.2",
     "expo-device": "~6.0.2",
     "expo-document-picker": "~12.0.2",
+    "expo-file-system": "~17.0.1",
     "expo-font": "~12.0.10",
     "expo-image-picker": "^15.0.7",
     "expo-linking": "~6.3.1",
     "expo-router": "~3.5.23",
     "expo-status-bar": "~1.12.1",
+    "expo-updates": "^0.25.24",
     "install": "^0.13.0",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
@@ -36,9 +38,7 @@
     "react-native-video": "^6.2.0",
     "react-native-video-player": "^0.14.0",
     "react-native-webview": "13.8.6",
-    "typescript": "~5.3.3",
-    "expo-updates": "~0.25.24",
-    "expo-file-system": "~17.0.1"
+    "typescript": "~5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.24.3",
