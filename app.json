@@ -34,7 +34,8 @@
     },
     "plugins": [
       "expo-router",
-      "expo-av"
+      "expo-av",
+      "expo-font"
     ],
     "extra": {
       "eas": {
